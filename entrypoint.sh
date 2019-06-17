@@ -16,7 +16,7 @@ elif [ $COMMAND == "receive" ]; then
     while sleep 60; do
         COUNTER=$((($COUNTER + 1)))
         $SIGNAL_CLI -u $SIGNAL_USERNAME receive > $COUNTER
-        cat $COUNTER | perl /usr/bin/cli.pl >> /small/SMALL/SIGNAL.org
+        cat $COUNTER | perl -ne '/Expires in: \d+ seconds/ || print $_' | perl -ne '/\[\[\/small\/SMALL\/images\/\]\[\]\]/ || print $_' | perl /usr/bin/cli.pl >> /small/SMALL/SIGNAL.org
     done
 elif [ $COMMAND == "bash" ]; then
     exec "$@"

@@ -26,7 +26,7 @@ for(<>){
     }
 
     if(! ($A[$#A] =~ "Profile key update, key length:32")){
-       $body = "$body\n" if(!($body =~ "- <.+>\n"));
+       $body = "$body " if(!($body =~ "- <.+>\n"));
        $filename = $1 if($A[$line + 3] =~ /Id:\s+(\d+)\sKey.+$/);
        $file = $1 if($A[$line + 8] =~ /Stored plaintext in:\s+(.+)$/);
        `cp $file /small/SMALL/images/$filename`;
