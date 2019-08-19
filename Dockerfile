@@ -12,7 +12,8 @@ RUN tar xf signal-cli-"${VERSION}".tar.gz -C /opt
 RUN ln -sf /opt/signal-cli-"${VERSION}"/bin/signal-cli /usr/local/bin/
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
-COPY cli.pl /usr/bin/cli.pl
+COPY src/Signal.pm /opt/Signal.pm
+COPY src/cli.pl /usr/bin/cli.pl
 
 RUN chmod +x /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/cli.pl
