@@ -1,0 +1,4 @@
+### To run the unit tests
+
+cd test
+perl SignalTest.pl

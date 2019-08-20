@@ -18,12 +18,20 @@ sub STDIN2Array {
 
 sub proccessRawMessages {
     my ($rawMessages) = @_;
-    my @orgMessages = (); 
-    for(@{rawMessages}){
-        push @orgMessages, messageToTask($_);
+    my @orgMessages = ();
+    for(@{$rawMessages}){
+        my %m = %{ raw2Org($_) };
+        push @orgMessages, \%m;
+    }
+    for(@orgMessages){
+        %a = %{$_};
+##        print "\nTEST\n";
+##        $s = %a{"body"};
+##        print $s;
     }
     return \@orgMessages;
 }
+
 
 sub raw2Org {
     my ($message) = @_; 
