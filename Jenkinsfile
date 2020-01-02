@@ -7,7 +7,8 @@ node("runner") {
        doGenerateSubmoduleConfigurations: false,
        submoduleCfg: [],
        userRemoteConfigs: [[
-	   url: 'git@git-container:/home/git/sources/lain-signal.git'
+	   url: 'git@git-container:/home/git/sources/lain-signal.git',
+	   credentialsId: 'git'
        ]]
    ]);
   dir("test") {
