@@ -1,5 +1,5 @@
 node("runner") {
-  sh("ssh-keyscan -t rsa git-container >> /home/ubuntu/.ssh/known_hosts")
+  sh("ssh-keyscan -t rsa git-container >> ~/.ssh/known_hosts")
   checkout([ 
        $class: 'GitSCM',
        branches: [[
