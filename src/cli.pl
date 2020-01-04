@@ -1,4 +1,4 @@
-#!/usr/bin/perl -I /opt
+#!/usr/bin/perl -l -I /opt
 
 use Signal;
 
@@ -9,7 +9,11 @@ my %message =  %{$messages[2]};
 
 for(@messages){
     my %message =  %{$_};
-    ## `cp -f $message{"file"} $message{"finalname"}`;
+    
+    if($message{"file"}){
+	`cp -f $message{"file"} $message{"finalname"}`;
+    }
+    
     my $body = $message{"body"};
     print $body;
 }
