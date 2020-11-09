@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 ENV COMMAND_CONF /opt/signal.conf
-ENV VERSION 0.6.2
+ENV VERSION 0.6.11
 WORKDIR /tmp
 
 RUN apt-get update &&  apt-get install -y openjdk-11-jdk
