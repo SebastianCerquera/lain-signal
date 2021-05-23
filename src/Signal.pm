@@ -82,7 +82,7 @@ sub raw2Org {
     $type = $type || $1 if($A[$line + 2] =~ /-\s.+\/(.+)\s\(Pointer\)$/);
     
     if($filename && $type){
-        $file = $1 if($A[$line + 8] =~ /Stored plaintext in:\s+(.+)$/);
+        $file = $1 if($A[$line + 11] =~ /Stored plaintext in:\s+(.+)$/);
         $body = "$body\n  - [[/small/SMALL/images/$filename.$type][$filename.$type]]";
         $results{"body"} = $body;
         $results{"file"} = $file;

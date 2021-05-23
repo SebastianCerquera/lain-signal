@@ -48,12 +48,13 @@ Attachments:
   Voice note: no
   Borderless: no
   Dimensions: 1080x866
-  Stored plaintext in: /root/.local/share/signal-cli/attachments/1T-sdxojoKGLR7Qj1dU2;";
+  Stored plaintext in: /root/.local/share/signal-cli/attachments/1T-sdxojoKGLR7Qj1dU2";
 
 
 $result = Signal::raw2Org($rawMessage);
 is( %{$result}{"body"} => '- <2021-05-23> Test image
   - [[/small/SMALL/images/1T-sdxojoKGLR7Qj1dU2.jpeg][1T-sdxojoKGLR7Qj1dU2.jpeg]]', 'Payload with single image');
+is( %{$result}{"file"} => "/root/.local/share/signal-cli/attachments/1T-sdxojoKGLR7Qj1dU2");
 
 
 #
@@ -72,11 +73,13 @@ $result = Signal::raw2Org($results[0]);
 is( %{$result}{"body"} => '- <2019-06-21> aaBB 90_ pf:
   - [[/small/SMALL/images/ucTGM0Zp6j6RxuKckdFH.jpeg][ucTGM0Zp6j6RxuKckdFH.jpeg]]'
     , "it extracted the first message with its image");
+is( %{$result}{"file"} => "/root/.local/share/signal-cli/attachments/ucTGM0Zp6j6RxuKckdFH");
 
 $result = Signal::raw2Org($results[$#results]);
 is( %{$result}{"body"} => '- <2019-05-17> xxyyzz 112233. +:
   - [[/small/SMALL/images/zcHkwVpJV8pA9EWi06py.jpeg][zcHkwVpJV8pA9EWi06py.jpeg]]'
     , "it extracted the first message with its image");
+is( %{$result}{"file"} => "/root/.local/share/signal-cli/attachments/zcHkwVpJV8pA9EWi06py");
 
 
 #
