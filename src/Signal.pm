@@ -42,7 +42,7 @@ sub raw2Org {
     my $type;
     my $file;
     my %results = {"body" => undef, "file" => undef, "finalname" => undef};
-    
+
     my $line = 0;
     for(@A){
        if (/Message timestamp:.+\((.+)T.+$/){
@@ -68,16 +68,17 @@ sub raw2Org {
     }
 
     $results{"body"} = $body;
-    if($A[$#A] =~ "Profile key update, key length:32"){
+    if($A[$#A] =~ "Profile key update, key length: 32"){
         return \%results;
     }
     
-    if($A[$#A] =~ "^\$" && $A[$#A - 1] =~ "Profile key update, key length:32"){
+    if($A[$#A] =~ "^\$" && $A[$#A - 1] =~ "Profile key update, key length: 32"){
         return \%results;
     }
-    
-    $filename = $1 if($A[$line + 3] =~ /Id:\s+(\d+)\sKey.+$/);
-    $type = $1 if($A[$line + 4] =~ /Filename:\s+.+\.(.+)$/);
+
+    $filename = $1 if($A[$line + 5] =~ /Id:\s(.+)\sKey.+$/);
+
+    $type = $2 if($A[$line + 3] =~ /Content-Type:\s+(\w+)\/(\w+)$/);
     $type = $type || $1 if($A[$line + 2] =~ /-\s.+\/(.+)\s\(Pointer\)$/);
     
     if($filename && $type){

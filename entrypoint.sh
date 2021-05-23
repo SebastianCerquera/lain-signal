@@ -6,7 +6,8 @@ SIGNAL_CLI="signal-cli"
 COMMAND=$(head -n 1 $COMMAND_CONF)
 
 if [ $COMMAND == "register" ]; then
-    $SIGNAL_CLI -u $SIGNAL_USERNAME register
+    CAPTCHA=$(cat $COMMAND_CONF | perl -ne 'print $_ if($. == 2)')
+    $SIGNAL_CLI -u $SIGNAL_USERNAME register --captcha $CAPTCHA
 elif [ $COMMAND == "verify" ]; then
     CODE=$(cat $COMMAND_CONF | perl -ne 'print $_ if($. == 2)')
     $SIGNAL_CLI -u $SIGNAL_USERNAME verify $CODE

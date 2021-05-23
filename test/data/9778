@@ -1,0 +1,35 @@
+Envelope from: +593001112131 (device: 1)
+Timestamp: 1561153011363 (2019-06-21T21:36:51.363Z)
+Sender: +593001112131 (device: 1)
+Server timestamps: received: 1561153011363 (2019-06-21T21:36:51.363Z) delivered: 1561153011363 (2019-06-21T21:36:51.363Z)
+Message timestamp: 1561153011363 (2019-06-21T21:36:51.363Z)
+Body: Test 1
+Expires in: 3600 seconds
+Profile key update, key length: 32
+
+Envelope from: +593001112131 (device: 1)
+Timestamp: 1561153011363 (2019-06-21T21:36:51.363Z)
+Sender: +593001112131 (device: 1)
+Server timestamps: received: 1561153011363 (2019-06-21T21:36:51.363Z) delivered: 1561153011363 (2019-06-21T21:36:51.363Z)
+Message timestamp: 1561153011363 (2019-06-21T21:36:51.363Z)
+Body: Test 2
+Expires in: 3600 seconds
+Profile key update, key length: 32
+
+Envelope from: +593001112131 (device: 1)
+Timestamp: 1561153011363 (2019-06-21T21:36:51.363Z)
+Sender: +593001112131 (device: 1)
+Server timestamps: received: 1561153011363 (2019-06-21T21:36:51.363Z) delivered: 1561153011363 (2019-06-21T21:36:51.363Z)
+Message timestamp: 1561153011363 (2019-06-21T21:36:51.363Z)
+Body: Test 3
+Expires in: 3600 seconds
+Profile key update, key length: 32
+
+Envelope from: +593001112131 (device: 1)
+Timestamp: 1561153011363 (2019-06-21T21:36:51.363Z)
+Sender: +593001112131 (device: 1)
+Server timestamps: received: 1561153011363 (2019-06-21T21:36:51.363Z) delivered: 1561153011363 (2019-06-21T21:36:51.363Z)
+Message timestamp: 1561153011363 (2019-06-21T21:36:51.363Z)
+Body: Test 4
+Expires in: 3600 seconds
+Profile key update, key length: 32
